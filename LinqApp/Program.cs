@@ -15,8 +15,38 @@ List<Student> students = new List<Student>
 };
 
 Console.WriteLine("LINQ-ÖVNINGAR MED STUDENTER\n");
+Console.WriteLine();
+
+ExerciseWhere(students);
+Console.WriteLine();
+
+Console.WriteLine();
+Console.WriteLine("Press any key to continue...");
+Console.ReadKey();
+
+
 
 static void ExerciseWhere(List<Student> students)
 {
+    List<Student> studentsFound;
 
+    // Hämta alla studenter som är äldre än 20.
+    studentsFound = [.. students.Where(s => s.Alder > 20)];
+    WriteResult($"Hittade {studentsFound.Count} student(er) som är äldre än 20.", studentsFound);
+
+    // Hämta alla studenter som har mer än 80 poäng.
+    studentsFound = [.. students.Where(s => s.Poang > 80)];
+    WriteResult($"Hittade {studentsFound.Count} student(er) som har mer än 80 poäng.", studentsFound);
+}
+
+static void WriteResult(string text, List<Student> students)
+{
+    Console.WriteLine(text);
+    Console.WriteLine();
+
+    foreach (var student in students)
+    {
+        student.Write();
+        Console.WriteLine();
+    }
 }
