@@ -1,9 +1,12 @@
 LINQ övningar – Övn. 7
 Praktisera nedanstående metoder.
 Where
+
 • Hämta alla studenter som är äldre än 20.
 • Hämta alla studenter som har mer än 80 poäng.
+
 Select
+
 • Visa bara namnen på alla studenter.
 • Visa namn och poäng i en ny anonym typ.
 OrderBy
